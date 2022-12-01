@@ -1,0 +1,90 @@
+.color-nav{
+    background-color: #2A4036;
+    /* position: relative; */
+    display:flex;
+    flex-direction: row;
+    
+    justify-content: space-around;
+    width: 100%;
+}
+.logo{
+    /* margin-top:10px; */
+    display:flex;
+    flex-direction: row;
+}
+.logo img{
+    margin-top:5px;
+}
+.logoname{
+    display:flex;
+    justify-content: center;
+}
+.logoname p{
+    margin-left:10px;
+    color:black;
+    font-family: "Source Sans Pro";
+    font-size:20px;
+}
+.logoname p span{
+    color:#BF161D;
+}
+.color-button{
+    background-color: #BF161D;
+    border:none;
+    color: white;
+    height: 40px;
+    width:70px;
+
+    font-family: "Source Sans Pro";
+    border-radius: 5px;
+
+}
+.signUpDiv{
+    display:flex;
+    justify-content: center;
+    flex-direction: column;
+}
+.nav-button{
+    color:#e9e9e9;
+    border:none;
+    background:none;
+    margin: 0 20px;
+}
+.nav-buttons-div{
+    display:flex;
+    justify-content: center;
+    flex-direction: row;
+    
+    width: 600px;
+}
+.contact i{
+    height:50px;
+    width:50px;
+    color:white;
+
+}
+.contact{
+    display:flex;
+    flex-direction: row;
+}
+.contact-call{
+    display:flex;
+    justify-content: center;
+    flex-direction: column;
+    font-size:10px;
+}
+.contact-call p{
+    margin:0px;
+    padding:0px;
+}
+.phone{
+    color:#e9e9e9;
+    font-size: larger;
+}
+
+.contact-icon{
+    display:flex;
+    flex-direction:column;
+    color:white;
+    justify-content: center;
+}
