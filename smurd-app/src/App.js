@@ -3,6 +3,7 @@ import './App.css';
 import LogIn from './login/login';
 import NavigationBar from './navBar/navBar';
 import Footer from './footer/footer';
+import Donations from './donations/donations';
 
 
 function App() {
@@ -10,6 +11,7 @@ function App() {
     <div className="App">
       <NavigationBar/>
       <LogIn></LogIn>
+      <Donations></Donations>
       <Footer/>
     </div>
   );

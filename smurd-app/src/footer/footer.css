@@ -1,6 +1,11 @@
 .detailsActions{
+    margin-top: 20px;
     display: flex;
     flex-direction: row;
+}
+.detailsActions p{
+    margin-top: 7px;
+    margin-right: 5px;
 }
 .detailsActions1{
     display: flex;
@@ -20,16 +25,19 @@
     font-family: "Source Sans Pro";
     margin-top:20px;
     margin-bottom:70px;
+    padding-top: 50px;
 }
 
 .columnText{
     margin-top: 1vw;
+    height:40px;
 }
 .number{
     color:#BF161D;
     font-size:2vw;
     font-weight: bold;
     margin:0;
+    height:40px;
 }
 .columnDescription{
     width: 8vw;
@@ -52,3 +60,26 @@
     filter: invert(48%) sepia(70%) saturate(300%) hue-rotate(310deg) brightness(130%) contrast(119%);
     margin: 0 4px;
 }
+.socialMediaLogo{
+    width:20px;
+    height:20px;
+    margin: 0 4px;
+    color:#CE626D;
+}
+.icon_class{
+    color:#2A4036;
+    height:30px;
+}
+.languageSelect{
+    height:20px;
+}
+#category{
+    border-radius: 3px;
+    color:rgb(97, 97, 97);
+    border-color: #FCB3B3;
+    font-family: "Source Sans Pro";
+    font-size:0.7vw;
+    height:20px;
+    margin-top: 7px;
+
+  }

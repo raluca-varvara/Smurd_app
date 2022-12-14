@@ -14,10 +14,12 @@
 }
 .logo img{
     margin-top:5px;
+    margin-bottom:5px;
 }
 .logoname{
     display:flex;
     justify-content: center;
+    flex-direction: column;
 }
 .logoname p{
     margin-left:10px;
