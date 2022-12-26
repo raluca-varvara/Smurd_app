@@ -2,6 +2,7 @@
     margin-top: 20px;
     display: flex;
     flex-direction: row;
+    flex-wrap: wrap;
 }
 .detailsActions p{
     margin-top: 7px;
@@ -83,3 +84,11 @@
     margin-top: 7px;
 
   }
+
+html{
+    width: 100vw;
+}
+
+body, root{
+    width: 100%;
+}

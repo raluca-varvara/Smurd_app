@@ -143,8 +143,8 @@ function Footer(){
                                 Language:
                             </p>
                             <select name="category" id="category">
-                                    <option value="Music">English</option>
-                                    <option value="Geography">Romanian</option>
+                                    <option value="English">English</option>
+                                    <option value="Romanian">Romanian</option>
                             </select>
                         </div>
                     </div>
