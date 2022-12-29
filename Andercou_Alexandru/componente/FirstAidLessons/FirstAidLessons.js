@@ -1,15 +1,8 @@
 import React,{useState} from 'react';
 import ReactDOM from "react-dom";
-
-import PropTypes from 'prop-types';
 import './FirstAidLessons.css';
 import {Button,Image, Container, Jumbotron} from 'reactstrap';
-import {Col, Row} from "reactstrap";
 import { FormGroup, Input, Label} from 'reactstrap';
-import { useNavigate } from "react-router-dom";
-import searchicon from "../commons/images/search.png"
-
-
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import {faMagnifyingGlass} from '@fortawesome/free-solid-svg-icons/faMagnifyingGlass'
 import FilterBox from '../FilterBox/FilterBox';
@@ -21,6 +14,13 @@ import iconC from "../commons/images/red-cross.png"
 import iconD from "../commons/images/respiratoriu.jpg"
 
 
+let courses=[{source_img:iconK ,title:"Tehnici de oprire a sangerarii",ranking:'5.0',date:"8.03.2023",time:"",city:"Cluj Napoca",hospital:""},
+{source_img:iconA,title:"Tehnici de oprire a sangerarii 2",ranking:'4.8',date:"27.02.2023",time:"",city:"Bucuresti",hospital:""},
+{source_img:iconB,title:"How to do heimnlich" ,ranking:'5.0',date:"27.02.2023",time:"",city:"Cluj Napoca",hospital:""},
+{source_img:iconC,title:"Tehnici de oprire a sangerarii 4" ,ranking:'5.0',date:"27.02.2023",time:"",city:"Timisoara",hospital:""},
+{source_img:"https://media.gettyimages.com/id/922952142/photo/romania-women-day-package.jpg?s=2048x2048&w=gi&k=20&c=LRjNdQe5-TJlxSvBUBw6FEP33wrUaHmLhakj9_o_Lf8=",
+  title:"Tehnici de oprire a sangerarii 5" ,ranking:'5.0',date:"27.02.2023",time:"",city:"Bucuresti",hospital:""}
+];
 
 
 
@@ -30,18 +30,22 @@ const FirstAidLessons=()=>
   const[filters,setFilters]=useState([])
   const[toBeDeleted,setToBeDeleted]=useState("")
   const[images,setImages]=useState([])
+  const[currentCourses,setCurrentCourses]=useState(courses)
+
 
   let filter=[]
 
+
+
 for(let filt of filters)
-if(filter.find(elm=>filt.props.content==elm.props.content)==null)
+if(filter.find(elm=>filt.value==elm.value)==null)
   filter.push(filt)
   else
   setFilters(filter)
 
 if(toBeDeleted!="")
 {
-  var elm=filter.find(f=>f.props.content==toBeDeleted)
+  var elm=filter.find(f=>f.value==toBeDeleted)
   console.log("elemeent",elm)
 
 
@@ -58,6 +62,61 @@ if(toBeDeleted!="")
 
 
   console.log("Filter:",filter)
+
+
+  
+  function apply_filters()
+  {
+    console.log("courses",courses)
+
+    var  new_list_courses=[]
+    for(var c of courses)
+    {
+      let added=false
+      if(filter.length>0){
+    for (var f of filter)
+    {
+    
+    
+  if(f.type="city" && c.city==f.value && added==false)
+  {
+    added=true
+    new_list_courses.push(c)
+
+  }
+
+  if(f.type="hospital" && c.city==f.value && added==false)
+  {
+    added=true
+    new_list_courses.push(c)
+
+  }
+  if(f.type="date" && c.city==f.value && added==false)
+  {
+    added=true
+    new_list_courses.push(c)
+
+  }
+  if(f.type="date" && c.city==f.value && added==false)
+  {
+    added=true
+    new_list_courses.push(c)
+
+  }
+ 
+
+
+  }
+}
+  else{
+ 
+    new_list_courses.push(c)
+  }
+
+  }
+ 
+  setCurrentCourses(new_list_courses)
+  }
  
   function onDeleteFilter(content)
   {
@@ -78,6 +137,7 @@ if(toBeDeleted!="")
 function handleSearch()
 {
   console.log("searches")
+  apply_filters()
   alert("searched")
 
 }
@@ -93,8 +153,8 @@ function handleSearch()
   if(valueI!="")
   {
     
-    filter.push(<FilterBox content={valueI} onDelet={onDeleteFilter}/>)
-
+    filter.push({value:valueI,type:"city"})
+ 
   }
 
   
@@ -102,24 +162,25 @@ function handleSearch()
   valueI= document.getElementById("hospitalField").value
   if(valueI!="")
   {
-    filter.push(<FilterBox content={valueI} onDelet={onDeleteFilter}/>)
+    filter.push({value:valueI,type:"hospital"})
   }
 
 
   valueI= document.getElementById("dateField").value
   if(valueI!="")
   {
-    filter.push(<FilterBox content={valueI} onDelet={onDeleteFilter}/>)
+    filter.push({value:valueI,type:"date"})
   }
 
   valueI= document.getElementById("searchField").value
  if(valueI!="")
 {
-  filter.push(<FilterBox content={valueI} onDelet={onDeleteFilter}/>)
-
+  filter.push({value:valueI,type:"word"})
 }
- setFilters(filter)
 
+
+ setFilters(filter)
+ apply_filters()
 
 
   }
@@ -131,10 +192,10 @@ function handleSearch()
   return(<div className="FirstAidLessons">
     <h1>First Aid Lessons</h1>
 
+    <hr></hr>
+   <div id="main_fa">
 
-   <div id="main">
-
-    <div id="left">
+    <div id="left_fa">
       <FormGroup id='search_Bar1'>
         <Label for='searchField'> Search </Label>
         <div id="active_search">
@@ -158,7 +219,9 @@ function handleSearch()
         </div>
       
         <div id="applied-filters">
-          {filters}
+        {
+         filters.map((img_src) => <FilterBox content={img_src.value} onDelet={onDeleteFilter}/>)}
+        
         </div>
       </div>
 
@@ -199,15 +262,13 @@ function handleSearch()
       </FormGroup><Button style={{ background: "#CE626D" }} className="button" id="submit" onClick={handleSubmit}>Show courses</Button>
 
   </div>
-  <div id="right">
+  <div id="right_fa">
 
-   <LessonImage source_img={iconK} title="Tehnici de oprire a sangerarii" ranking='5.0' date="28.12.2022"/>
-   <LessonImage source_img={iconA} title="Tehnici de oprire a sangerarii 2" ranking='4.8' date="28.12.2022"/>
-   <LessonImage source_img={iconB} title="Tehnici de oprire a sangerarii 3" ranking='5.0' date="28.12.2022"/>
-   <LessonImage source_img={iconC} title="Tehnici de oprire a sangerarii 4" ranking='5.0' date="28.12.2022"/>
-   <LessonImage source_img="https://media.gettyimages.com/id/922952142/photo/romania-women-day-package.jpg?s=2048x2048&w=gi&k=20&c=LRjNdQe5-TJlxSvBUBw6FEP33wrUaHmLhakj9_o_Lf8="
-    title="Tehnici de oprire a sangerarii 5" ranking='5.0' date="28.12.2022"/>
-    {images}
+
+  {
+   currentCourses.map((img_src) => <LessonImage source_img={img_src.source_img} title={img_src.title}
+                                   ranking={img_src.ranking} date={img_src.date}  time={img_src.time}    
+                                  city={img_src.city}   hospital={img_src.source_img}/>)}
     </div>
     </div>
     </div>

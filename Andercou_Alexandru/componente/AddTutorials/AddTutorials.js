@@ -98,7 +98,7 @@ function AddTutorials (){
  return (<div className="AddTutorials" data-testid="AddTutorials">
   <h1 >Add a tutorial</h1>
 
- 
+  <hr></hr>
  < div id="main">
     
 <div id="left">

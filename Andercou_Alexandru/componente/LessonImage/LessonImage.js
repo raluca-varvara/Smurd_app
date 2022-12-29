@@ -10,7 +10,7 @@ import { Redirect } from 'react-router-dom';
 
 
 
-function LessonImage(props={source_img:"",title:"Lesson",date:"28.12.2022",time:"21:07",ranking:"5.0" ,linkToLesson:"2"})
+function LessonImage(props={source_img:"",title:"Lesson",date:"28.12.2022",time:"21:07",ranking:"5.0" ,city:"Cluj Napoca",hospital:"Central",linkToLesson:"2"})
 {
 
 function doClick()

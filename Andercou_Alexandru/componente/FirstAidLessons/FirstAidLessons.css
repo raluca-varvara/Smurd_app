@@ -62,21 +62,26 @@ justify-content: space-between;
 }
 
 
-#right
+#right_fa
 {
     display: flex;
     flex-wrap: wrap;
+    
 
 }
 
-#main
+#left_fa
+{
+    width:300px
+}
+#main_fa
 {
     display: flex;
 }
 
 
 
-#left input
+#left_fa input
 {
 width:200px;
 
