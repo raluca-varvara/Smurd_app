@@ -1,0 +1,28 @@
+#main{
+
+    margin:20px;
+    display:flex;
+    justify-content: space-between;
+  
+}
+@media (orientation: portrait){
+.AddTutorials
+{
+    height:100vh;
+    width: 100vw;
+}
+}
+
+#left
+{
+    margin-right:100px;
+}
+
+input
+{
+    border:2px solid #CE626D;
+}
+input[type="file"]
+{
+  
+}
