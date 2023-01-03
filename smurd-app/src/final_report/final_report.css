@@ -1,0 +1,106 @@
+.finalReportWrapper{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+.header{
+    width:100%;
+    background-color: #2A4036;
+    color:white;
+    font-family: "Source Sans Pro";
+    padding-bottom: 20px;
+}
+.header h1{
+    text-align: center;
+}
+.header p{
+    color: #979797;
+}
+.display-linebreak {
+    white-space: pre-wrap;
+    white-space: -moz-pre-wrap;
+    white-space: -pre-wrap;
+    white-space: -o-pre-wrap;
+    word-wrap: break-word;
+    text-align: left;
+    width:70%;
+  }
+.procedure{
+    display:flex;
+    flex-direction: row;
+    justify-content: space-around;
+    margin-top: 80px;
+}
+.procedureInputs{
+    display:flex; 
+    flex-direction: column;
+    justify-content: center;
+    width:50%;
+
+}
+.procedureDescription{
+    display:flex;
+    flex-direction: column;
+    justify-content:flex-start;
+    font-family: "Source Sans Pro";
+    width:50%;
+    padding:30px;
+}
+.procedureTitle{
+    color:black;
+    font-family: "Source Sans Pro";
+    margin: 20px 0;
+    margin-bottom: 40px;
+}
+.formInput{
+    border-color:#CE626D;
+    border-radius: 5px;
+    margin:0;
+    align-self: center;
+    width:100%;
+    margin: 5px 0;
+    border-width: 1.5px;
+    background-color: #FAFAFA;
+    font-family: "Source Sans Pro";
+    color:#979797;
+    padding:6px 2px;
+
+}
+
+
+#datePicked{
+    padding:1px 2px;
+}
+.procedureForm{
+    width:50%;
+    display:flex;
+    flex-direction: row;
+    justify-content: center;
+}
+.formLabel{
+    width:100%;
+    color:black;
+    font-family: "Source Sans Pro";
+    text-align: left;
+    margin: 7px 0;
+    font-weight: bold;
+}
+.buttonProcedure{
+    background-color: #CE626D;
+    color:white;
+    font-family: "Source Sans Pro";
+    width:fit-content;
+    padding:10px 25px;
+    align-self: center;
+    border: none;
+    border-radius: 5px;
+    margin-top: 10px;;
+
+}
+.imgDoctors{
+    margin-top: 250px;
+    margin-bottom: 100px;
+    height:50%;
+}
+
+

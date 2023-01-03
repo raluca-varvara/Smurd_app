@@ -1,0 +1,98 @@
+.login{
+    display:flex;
+    align-items: center;
+    flex-direction: column;
+    margin: 30px
+}
+.title{
+    color:#7E1418;
+    font-family: "Source Sans Pro";
+    font-size: 30px;
+
+}
+.formStyle{
+    margin: 20px;
+    background-color: rgba(165, 192, 170,.7);
+    height: 20vh;
+    color: 'white'; 
+    border-radius: 25px;
+    padding: 20px;
+    border: 3px solid #2A4036;
+    width: 50%;
+
+
+}
+label{
+    font-family: "Source Sans Pro";
+    margin: 5px;
+    height:30%;
+    width: 20%;
+
+    
+}
+input{
+    margin: 5px;
+    border-radius: 10px;
+    width:80%;
+    margin: 5px;
+    border-radius: 10px;
+    height:3vh;
+
+    
+}
+.button-div{
+    display:flex;
+    flex-direction: row;
+    justify-content: center;
+    margin-top:1vh;
+}
+form{
+    width:100%;
+    height:100%;
+    padding:0;
+    margin:0;
+    display:flex;
+    flex-direction: column;
+    justify-content: center;
+}
+.row{
+    display:flex;
+    flex-direction: row;
+    margin:0;
+    padding:0;
+
+}
+
+
+form button{
+    margin: 5px;
+    
+}
+.input-container{
+    display:flex;
+    flex-direction:row;
+}
+
+.button-color{
+    background-color: #BF161D;
+    border:none;
+    color: white;
+    font-weight: bold;
+    margin:0;
+    border-radius: 5px;
+    height:max-content;
+    padding:0.5em;
+    font-family: "Source Sans Pro";
+    width: 20%;
+    height:5vh;
+
+}
+
+.loginCont{
+    display:flex;
+    align-items: center;
+    flex-direction: column;
+    height:100vh;
+    width:100%;
+}
+
