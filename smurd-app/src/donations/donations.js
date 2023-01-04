@@ -16,9 +16,29 @@ import twitter from '../common/images/brands/square-twitter.svg'
 import linkedin from '../common/images/brands/linkedin.svg'
 import { faFacebook, faInstagram,faLinkedin, faTwitter } from "@fortawesome/free-brands-svg-icons"
 
+import TextField from '@mui/material/TextField';
+import Dialog from '@mui/material/Dialog';
+import DialogActions from '@mui/material/DialogActions';
+import DialogContent from '@mui/material/DialogContent';
+import DialogContentText from '@mui/material/DialogContentText';
+import DialogTitle from '@mui/material/DialogTitle';
+
 
 function Donations(){
-    const [lang, setLang] = useState(["Romanian", "English"]);
+    const [donation, setDonation] = useState(5);
+    const [open, setOpen] = React.useState(false);
+
+    const handleClickOpen = () => {
+        setOpen(true);
+    };
+
+    const handleClose = () => {
+        setOpen(false);
+    };
+    const handlePay = () => {
+        alert("Succseful donation");
+        setOpen(false);
+    };
 
     return(
         <div className = "donationsWrapper">
@@ -36,30 +56,71 @@ function Donations(){
                         </div>
                     </div>
                     <div className='donationBillRow'>
-                        <button className = "donationBill">
+                        <button className = "donationBill" onClick={() => setDonation(5)}>
                             <p>5$</p>
                         </button>
-                        <button className = "donationBill">
+                        <button className = "donationBill" onClick={() => setDonation(10)}>
                             <p>10$</p>
                         </button>
-                        <button className = "donationBill">
+                        <button className = "donationBill" onClick={() => setDonation(25)}>
                             <p>25$</p>
                         </button>
-                        <button className = "donationBill">
+                        <button className = "donationBill" onClick={() => setDonation(50)}>
                             <p>50$</p>
                         </button>
-                        <button className = "donationBill">
+                        <button className = "donationBill" onClick={() => setDonation(100)}>
                             <p>100$</p>
                         </button>
                     </div>
                     <div className='paymentRow'>
                         <div className = "paymentWrapper">
-                            <button className="paymentButton">
+                            <button className="paymentButton" onClick={handleClickOpen}>
                                 Continue to payment
                             </button>
                         </div>
                     </div>
-                
+                    <Dialog open={open} onClose={handleClose}>
+                        <DialogTitle>Subscribe</DialogTitle>
+                        <DialogContent>
+                        <div className='dialogText'>
+                            To proceed the donation of <span>{donation}$ </span> enter the details of your card
+                        </div>
+                        <div className='cardLabel'>Card number</div>
+                        <TextField
+                            autoFocus
+                            margin="dense"
+                            id="card_number"
+                            label="Card number"
+                            type="text"
+                            fullWidth
+                            variant="standard"
+                        />
+                        <div  className='cardLabel'>CVV</div>
+                        <TextField
+                            autoFocus
+                            margin="dense"
+                            id="cvv"
+                            label="CVV"
+                            type="password"
+                            fullWidth
+                            variant="standard"
+                        />
+                        <div  className='cardLabel'>Name</div>
+                        <TextField
+                            autoFocus
+                            margin="dense"
+                            id="name"
+                            label="Name"
+                            type="text"
+                            fullWidth
+                            variant="standard"
+                        />
+                        </DialogContent>
+                        <DialogActions>
+                            <button onClick={handleClose} className="cardButton">Cancel</button>
+                            <button onClick={handlePay} className="cardButton">Pay</button>
+                        </DialogActions>
+                    </Dialog>
                 
 
             </div>
