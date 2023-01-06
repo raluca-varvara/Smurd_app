@@ -16,6 +16,10 @@ import FirstAidSteps from './firstAidSteps/firstAidSteps'
 import Login from './login/login'
 import Security from './security/security'
 import CustomerSupport from './customersupport/customer_support'
+import AddTutorials from './addtutorials/AddTutorials'
+import FirstAidLessons from './firstaidlessons/FirstAidLessons'
+import MockUpApplicationVerification from './applicationsverif/MockUpApplicationVerification'
+import VolunteerAplications from './VolunteerAplications/VolunteerAplications'
 
 
 function App() {
@@ -37,6 +41,10 @@ function App() {
           <Route path="/login" element={<Login />} />
           <Route path="/security" element={<Security />} />
           <Route path="/customer" element={<CustomerSupport />} />
+          <Route path="/tutorials" element={<AddTutorials />} />
+          <Route path="/firstaidlessons" element={<FirstAidLessons />} />
+          <Route path="/verification" element={<MockUpApplicationVerification />} />
+          <Route path="/volunteerapplication" element={<VolunteerAplications />} />
           
          
           </Routes> 

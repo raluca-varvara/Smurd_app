@@ -106,7 +106,7 @@ function HomePage() {
                     </button>
                     <button className = "control">
                         <div className = "center_row">
-                            <img src={course} alt="Apply for course" height="130"/>
+                            <img src={course} alt="Apply for course" height="130"  onClick={() => navigate("/firstaidlessons")}/>
                         </div>
                         <div className = "center_row">
                             <p>Apply for course</p>

@@ -1,8 +1,12 @@
 .donationsWrapper{
     background-color: rgba(250, 119, 119, 0.2);
-    padding:20px 300px;
-    height:320px;
+    align-items: center;
+    height:auto;
     padding-top: 50px;
+    display:flex;
+    flex-direction: column;
+    justify-content: center;
+    width:100%;
     
 }
 
@@ -10,16 +14,18 @@
     display: flex;
     flex-direction: row;
     justify-content: center;
+    
 }
 .centered_column{
     display: flex;
     flex-direction: column;
     justify-content: center;
+    width:70%;
 }
 
 .donationText{
     background: linear-gradient(to bottom right, rgba(206, 112, 98,1), rgba(233, 247, 248,0.8));
-    height:wrap-content;
+    height:auto;
     border-radius: 10px;
     display:flex;
     flex-direction: row;
@@ -116,4 +122,28 @@ p{
     font-weight: bold;
     font-size: large;
 
+}
+.dialogText{
+    font-family: "Source Sans Pro";
+    font-size: larger;
+}
+.dialogText span{
+    color:#7E1418;
+    font-weight: bold;
+}
+.cardLabel{
+    margin-top: 20px;
+    margin-bottom: 0;
+    font-family: "Source Sans Pro";
+    color:#7E1418;
+}
+.cardButton{
+    color:white;
+    background-color: #CE626D;
+    margin:15px 10px;
+    padding: 5px 10px;
+    border-radius: 5px;
+    font-family: "Source Sans Pro";
+    font-size: large;
+    border:none;
 }
