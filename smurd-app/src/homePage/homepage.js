@@ -1,10 +1,11 @@
-import React, { useState } from "react";
+import React, {useEffect, useState} from "react";
 import ReactDOM from "react-dom";
 import "./homepage.css"
 import customer_support from "../common/images/home_page/customer_support.png"
 import tests from "../common/images/home_page/tests.png"
 import security from "../common/images/home_page/security.png"
 import course from "../common/images/home_page/apply_for_course.png"
+import addTutorial from "../common/images/home_page/add-tutorail.png"
 import heart_rate from "../common/images/home_page/heart_rate.png"
 import heart_rate_hearth from "../common/images/home_page/heart_rate_with_small_heart.png"
 import doctor from "../common/images/home_page/doctor.png"
@@ -17,10 +18,39 @@ import { useNavigate } from "react-router-dom";
 
 
 function HomePage() {
- let navigate = useNavigate(); 
+ let navigate = useNavigate();
+    const [text, setText] = useState("Check volunteer applications")
+    const [tutorialText, setTutorialtext] = useState("Apply for course")
+    const [tutorialImage, setTutorialImage] = useState(course)
+    const [tutorialNavigate, setTutorialNavigate] = useState("/firstaidlessons")
+    const [button, setButton] = useState("/verification")
 
     var role = localStorage.getItem("role");
-    
+
+    useEffect (()=> {
+        var verifyButtonHide = document.getElementById("verify");
+        if (localStorage.getItem("role") === "admin") {
+            verifyButtonHide.style.display = "block"
+            setText("Check volunteer applications")
+            setTutorialtext("Add tutorial")
+            setTutorialImage(addTutorial)
+            setTutorialNavigate("/tutorials")
+            setButton("/verification")
+        } else if (localStorage.getItem("role") === "volunteer"){
+            setText("Final report")
+            verifyButtonHide.style.display = "block"
+            setTutorialtext("Apply for course")
+            setTutorialImage(course)
+            setTutorialNavigate("/firstaidlessons")
+            setButton("/finalreport")
+        } else {
+            verifyButtonHide.style.display = "none"
+            setTutorialtext("Apply for course")
+            setTutorialImage(course)
+            setTutorialNavigate("/firstaidlessons")
+        }
+    })
+
   return (
     <div className="homepage">
 
@@ -98,7 +128,7 @@ function HomePage() {
                     </button>
                     <button className = "control">
                         <div className = "center_row">
-                            <img src={tests} alt="Take a quiz" height="130"/>
+                            <img src={tests} alt="Take a quiz" height="130" onClick={() => navigate("/quiz")}/>
                         </div>
                         <div className = "center_row">
                             <p>Take a quiz</p>
@@ -106,10 +136,10 @@ function HomePage() {
                     </button>
                     <button className = "control">
                         <div className = "center_row">
-                            <img src={course} alt="Apply for course" height="130"  onClick={() => navigate("/firstaidlessons")}/>
+                            <img src={tutorialImage} alt="apply for course" height="130"  onClick={() => navigate(tutorialNavigate)}/>
                         </div>
                         <div className = "center_row">
-                            <p>Apply for course</p>
+                            <p>{tutorialText}</p>
                         </div>      
                     </button>
                     <button className = "control">
@@ -121,6 +151,8 @@ function HomePage() {
                         </div>
                     </button>
                 </div>
+
+                <button id="verify" className="verify" onClick={() => navigate(button)}>{text}</button>
             </div>
     <Donations/>
           <Footer/>

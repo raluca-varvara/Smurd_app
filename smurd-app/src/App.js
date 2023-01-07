@@ -20,7 +20,7 @@ import AddTutorials from './addtutorials/AddTutorials'
 import FirstAidLessons from './firstaidlessons/FirstAidLessons'
 import MockUpApplicationVerification from './applicationsverif/MockUpApplicationVerification'
 import VolunteerAplications from './VolunteerAplications/VolunteerAplications'
-
+import Quiz from "./quiz/quiz";
 
 function App() {
 
@@ -45,9 +45,9 @@ function App() {
           <Route path="/firstaidlessons" element={<FirstAidLessons />} />
           <Route path="/verification" element={<MockUpApplicationVerification />} />
           <Route path="/volunteerapplication" element={<VolunteerAplications />} />
-          
-         
-          </Routes> 
+          <Route path="/quiz" element={<Quiz />} />
+
+         </Routes>
         
     
       {/* <LogIn></LogIn> */}

@@ -1,12 +1,15 @@
 import React, { useState } from "react";
 import ReactDOM from "react-dom";
 import "./login.css"
+import { useNavigate } from "react-router-dom";
+
 
 function LogIn() {
   const [errorMessages, setErrorMessages] = useState({});
   const [isSubmitted, setIsSubmitted] = useState(false);
+  let navigate = useNavigate();
 
-  // User Login info
+    // User Login info
   const database = [
     {
       username: "user1",
@@ -46,6 +49,8 @@ function LogIn() {
         setErrorMessages({ name: "pass", message: errors.pass });
       } else {
         setIsSubmitted(true);
+        navigate("/");
+        window.alert("Logged in successfully");
       }
     } else {
       // Username not found
