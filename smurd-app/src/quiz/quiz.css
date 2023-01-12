@@ -1,0 +1,78 @@
+.submitAnswer {
+    background-color: #BF161D;
+    border-radius: 5px;
+    border: none;
+    margin: 20px 0;
+    color: white;
+    font-family: "Source Sans Pro";
+    padding: 15px 0;
+    width: 30%;
+    height: 5%;
+}
+
+.submitAnswer:hover {
+    background-color: #a90b12;
+    border-radius: 5px;
+    border: none;
+    margin: 20px 0;
+    color: white;
+    font-family: "Source Sans Pro";
+    padding: 15px 0;
+    width: 30%;
+    height: 5%;
+    cursor: pointer;
+}
+
+.quizTitle {
+    font-family: "Source Sans Pro";
+    font-size: xxx-large;
+    margin-top: 30px;
+    margin-bottom: 55px;
+}
+
+.questions {
+    display: flex;
+    flex-direction: column;
+    justify-content: left;
+    width: 30%;
+}
+
+.questions p {
+    margin-bottom: 10px;
+    font-family: "Source Sans Pro";
+    font-size: x-large;
+    margin-top: 20px;
+}
+
+.answer {
+    display: flex;
+    flex-direction: row;
+}
+
+.radio {
+    margin-left: 130px;
+    scale: 70%;
+}
+
+.radio:checked {
+    margin-left: 130px;
+    scale: 70%;
+    accent-color: #BF161D;
+}
+
+.label {
+    font-family: "Source Sans Pro";
+    position: relative;
+    top: 7px;
+}
+
+.page {
+    display: flex;
+    justify-content: space-around;
+}
+
+.respiratoriu {
+    width: 38%;
+    height: 38%;
+    border-radius: 25px;
+}

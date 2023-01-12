@@ -1,0 +1,88 @@
+#searchField
+{
+width:200px;
+
+}
+#simg{
+   
+    width:20px;
+    height:20px;
+}
+#active_search
+{
+    display: flex;
+}
+h1
+{
+    text-align: center;
+    margin:auto
+}
+
+
+.button
+{
+
+    background-color:#CE626D
+}
+input
+{
+    color: #CE626D;
+    border:2px red;
+}
+.FirstAidLessons
+{
+    width:100vw;
+    height: 100vh;
+}
+
+#applied
+{
+    width:240px;
+   
+}
+
+#applied-head
+{
+display: flex;
+justify-content: space-between;
+
+}
+
+#cancel
+{
+    color: #CE626D;
+   
+}
+
+#applied-filters
+{
+    display:flex;
+    margin:10px;
+    flex-wrap: wrap;
+}
+
+
+#right_fa
+{
+    display: flex;
+    flex-wrap: wrap;
+    
+
+}
+
+#left_fa
+{
+    width:300px
+}
+#main_fa
+{
+    display: flex;
+}
+
+
+
+#left_fa input
+{
+width:200px;
+
+}

@@ -1,0 +1,63 @@
+h1 {
+    font-family: "Source Sans Pro";
+    font-weight: bolder;
+    text-align: center;
+}
+
+h3 {
+    font-family: "Source Sans Pro";
+    font-weight: bolder;
+    text-align: center;
+    color: grey;
+}
+
+.accept {
+    background-color: #BF161D;
+    border-radius: 5px;
+    border: none;
+    margin: 20px 0;
+    color: white;
+    font-family: "Source Sans Pro";
+    padding: 15px 0;
+    width: 30%;
+    height: 5%;
+
+
+}
+
+.decline {
+    background-color: #BF161D;
+    border-radius: 5px;
+    border: none;
+    margin: 20px 0;
+    color: white;
+    font-family: "Source Sans Pro";
+    padding: 15px 0;
+    width: 30%;
+    height: 5%;
+
+
+}
+
+.detailsActions {
+    margin-top: 20px;
+    display: flex;
+    flex-direction: row;
+}
+
+.detailsActions p {
+    margin-top: 7px;
+    margin-right: 5px;
+}
+
+.detailsActions1 {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+}
+
+input {
+    border: 1px solid #CE626D;
+    background-color: #f9f6f6;
+    border-radius: 4px;
+}

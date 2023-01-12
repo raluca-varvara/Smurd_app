@@ -1,0 +1,14 @@
+.FilterBox {
+
+
+display:flex;
+color: #CE626D;
+border: 2px solid #CE626D;
+width:fit-content;
+margin-right:10px;
+margin-bottom:10px;
+}
+#content
+{
+    margin-right:10px;
+}

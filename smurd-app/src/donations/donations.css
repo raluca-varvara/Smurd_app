@@ -1,0 +1,149 @@
+.donationsWrapper{
+    background-color: rgba(250, 119, 119, 0.2);
+    align-items: center;
+    height:auto;
+    padding-top: 50px;
+    display:flex;
+    flex-direction: column;
+    justify-content: center;
+    width:100%;
+    
+}
+
+.centered_row{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    
+}
+.centered_column{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width:70%;
+}
+
+.donationText{
+    background: linear-gradient(to bottom right, rgba(206, 112, 98,1), rgba(233, 247, 248,0.8));
+    height:auto;
+    border-radius: 10px;
+    display:flex;
+    flex-direction: row;
+    padding: 5px 20px;
+}
+.donationDescription{
+    display:flex;
+    flex-direction: column;
+    width:70%;
+    margin:10px;
+}
+h2{
+    color:white;
+    font-family: "Source Sans Pro";
+    text-align: left;
+
+    margin:10px;
+    margin-bottom: 0;
+}
+.pText{
+    color:white;
+    font-family: "Source Sans Pro";
+    text-align: left;
+    margin:10px;
+    font-weight: 200;
+}
+.donationMake{
+    color:#7E1418;
+    background-color: white;
+    padding:10px 30px;
+    border-radius: 15px;
+    font-family: "Source Sans Pro";
+    font-weight: bold;
+    margin:10px;
+    font-weight: 200;
+}
+.donationColumn{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width:100%;
+    height:100%
+}
+.donationRow{
+    display: flex;
+    flex-direction: row;
+    width:100%;
+    height:100%
+}
+.donationBill{
+    color:white;
+    background-color: #CE626D;
+    margin:15px 0;
+    /* padding:12px 50px; */
+    width:140px;
+    height:45px;
+    border-radius: 20px;
+    font-family: "Source Sans Pro";
+    font-weight: bold;
+    font-size: large;
+    border:none;
+    
+}
+.donationBillRow{
+    display:flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin:0 30px;
+    margin-top: 15px;
+}
+p{
+    margin:0;
+}
+.paymentRow{
+    display:flex;
+    flex-direction: row;
+    justify-content: end;
+    margin:15px;
+}
+.paymentWrapper{
+    background: linear-gradient(to bottom right, rgba(206, 98, 109,1), rgba(233, 247, 248,0.8));
+    display:flex;
+    justify-content: center;
+    padding:20px;
+    border-radius: 15px;
+}
+.paymentButton{
+    border-radius: 15px;
+    border:none;
+    padding:5px 10px;
+    background-color:white;
+    color:#7E1418;
+    font-family: "Source Sans Pro";
+    font-weight: bold;
+    font-size: large;
+
+}
+.dialogText{
+    font-family: "Source Sans Pro";
+    font-size: larger;
+}
+.dialogText span{
+    color:#7E1418;
+    font-weight: bold;
+}
+.cardLabel{
+    margin-top: 20px;
+    margin-bottom: 0;
+    font-family: "Source Sans Pro";
+    color:#7E1418;
+}
+.cardButton{
+    color:white;
+    background-color: #CE626D;
+    margin:15px 10px;
+    padding: 5px 10px;
+    border-radius: 5px;
+    font-family: "Source Sans Pro";
+    font-size: large;
+    border:none;
+}

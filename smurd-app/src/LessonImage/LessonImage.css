@@ -1,0 +1,24 @@
+.LessonImage  {
+
+width:200px;
+height:200px;
+margin-top:10px;
+margin-bottom:120px;
+margin-left:20px;
+text-align: center;
+display:block;
+}
+#header
+{
+
+    display: flex;
+    justify-content: flex-end;
+}
+#rankings
+{
+    display: flex;
+    background-color: #CE626D;
+    color:white;
+    width:fit-content;
+    height:25px;
+}
