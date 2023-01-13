@@ -76,3 +76,14 @@
     height: 38%;
     border-radius: 25px;
 }
+
+#category {
+    border-radius: 3px;
+    color: rgb(97, 97, 97);
+    border-color: #FCB3B3;
+    font-family: "Source Sans Pro";
+    font-size: 0.7vw;
+    height: 20px;
+    margin-top: 7px;
+
+}
