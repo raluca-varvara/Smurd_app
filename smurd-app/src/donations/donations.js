@@ -27,6 +27,9 @@ import DialogTitle from '@mui/material/DialogTitle';
 function Donations(){
     const [donation, setDonation] = useState(5);
     const [open, setOpen] = React.useState(false);
+    const [cvv, setCvv] = useState("");
+    const [cardNb ,setCardNb] = useState("")
+    const [name, setName] = useState("")
 
     const handleClickOpen = () => {
         setOpen(true);
@@ -36,8 +39,14 @@ function Donations(){
         setOpen(false);
     };
     const handlePay = () => {
-        alert("Succseful donation");
-        setOpen(false);
+        if(cvv=="" || cardNb == "" || name ==""){
+            alert("Please complete all the needed info")
+        }
+        else{
+            alert("Succseful donation");
+            setOpen(false);
+        }
+        
     };
 
     return(
@@ -49,26 +58,36 @@ function Donations(){
                             <h2>Would you like to help us the otherway?</h2>
                             <p className = "pText">Pellentesque ac bibendum tortor. Nulla eget lobortis lacus.</p>
                         </div>
-                        <div classname = "donationRow">
+                        <div className = "donationRow">
                             <div className = "donationColumn">
                                 <p className = "donationMake">Choose a sum from below</p>
                             </div>
                         </div>
                     </div>
                     <div className='donationBillRow'>
-                        <button className = "donationBill" onClick={() => setDonation(5)}>
+                        <button id="5" className = {
+                                donation == 5 ? 'donationBillActive' : 'donationBill'
+                                    } onClick={() => setDonation(5)}>
                             <p>5$</p>
                         </button>
-                        <button className = "donationBill" onClick={() => setDonation(10)}>
+                        <button id="10" className = {
+                                donation == 10 ? 'donationBillActive' : 'donationBill'
+                                    } onClick={() => setDonation(10)}>
                             <p>10$</p>
                         </button>
-                        <button className = "donationBill" onClick={() => setDonation(25)}>
+                        <button id="25" className = {
+                                donation == 25 ? 'donationBillActive' : 'donationBill'
+                                    } onClick={() => setDonation(25)}>
                             <p>25$</p>
                         </button>
-                        <button className = "donationBill" onClick={() => setDonation(50)}>
+                        <button id="50" className = {
+                                donation == 50 ? 'donationBillActive' : 'donationBill'
+                                    } onClick={() => setDonation(50)}>
                             <p>50$</p>
                         </button>
-                        <button className = "donationBill" onClick={() => setDonation(100)}>
+                        <button id="100" className = {
+                                donation == 100 ? 'donationBillActive' : 'donationBill'
+                                    } onClick={() => setDonation(100)}>
                             <p>100$</p>
                         </button>
                     </div>
@@ -94,6 +113,7 @@ function Donations(){
                             type="text"
                             fullWidth
                             variant="standard"
+                            onChange={(e) => setCardNb(e.target.value)}
                         />
                         <div  className='cardLabel'>CVV</div>
                         <TextField
@@ -104,6 +124,7 @@ function Donations(){
                             type="password"
                             fullWidth
                             variant="standard"
+                            onChange={(e) => setCvv(e.target.value)}
                         />
                         <div  className='cardLabel'>Name</div>
                         <TextField
@@ -114,6 +135,7 @@ function Donations(){
                             type="text"
                             fullWidth
                             variant="standard"
+                            onChange={(e) => setName(e.target.value)}
                         />
                         </DialogContent>
                         <DialogActions>

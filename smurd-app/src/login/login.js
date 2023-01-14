@@ -32,6 +32,7 @@ function LogIn() {
     uname: "invalid username",
     pass: "invalid password"
   };
+
   const handleSubmit = (event) => {
     //Prevent page reload
     event.preventDefault();
@@ -40,22 +41,26 @@ function LogIn() {
 
     // Find user login info
     const userData = database.find((user) => user.username === uname.value);
-     localStorage.setItem("role", userData.role);
+     
 
     // Compare user info
     if (userData) {
       if (userData.password !== pass.value) {
         // Invalid password
         setErrorMessages({ name: "pass", message: errors.pass });
+        alert("wrong password")
       } else {
+        localStorage.setItem("role", userData.role);
         setIsSubmitted(true);
         navigate("/");
         window.alert("Logged in successfully");
       }
     } else {
       // Username not found
+      alert("this username does not exist")
       setErrorMessages({ name: "uname", message: errors.uname });
     }
+    
   };
  
 

@@ -132,7 +132,7 @@ h1{
 }
 
 .verify {
-    background-color: #BF161D;
+    background-color: #7E1418;
     border-radius: 5px;
     border: none;
     margin: 20px 0;
@@ -141,11 +141,12 @@ h1{
     padding: 15px 0;
     width: 60%;
     height: 5%;
-    margin-left: 190px;
+    margin-bottom: 100px;
+    
 }
 
 .verify:hover {
-    background-color: #a90b12;
+    background-color: #7E1418;
     border-radius: 5px;
     border: none;
     margin: 20px 0;
@@ -155,5 +156,12 @@ h1{
     width: 60%;
     height: 5%;
     cursor: pointer;
-    margin-left: 190px;
+    margin-bottom: 100px;
+    
+}
+.centerColumn{
+    display:flex;
+    flex-direction: column;
+    align-items: center;
+    width:100%;
 }

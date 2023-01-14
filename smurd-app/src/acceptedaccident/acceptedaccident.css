@@ -21,7 +21,8 @@ h3 {
     padding: 15px 0;
     width: 30%;
     height: 5%;
-
+    margin: 5px 100px;
+    margin-top: 30px;
 
 }
 
@@ -35,8 +36,9 @@ h3 {
     padding: 15px 0;
     width: 30%;
     height: 5%;
-
-
+    
+    margin: 5px 50px;
+    margin-top: 30px;
 }
 
 .detailsActions {
@@ -60,4 +62,19 @@ input {
     border: 1px solid #CE626D;
     background-color: #f9f6f6;
     border-radius: 4px;
+}
+.acceptedRow{
+    display:flex;
+    flex-direction: row;
+    align-items: left;
+}
+.arrived {
+    background-color: #CE626D;
+    border-radius: 5px;
+    border: none;
+    color: white;
+    font-family: "Source Sans Pro"; 
+    margin: 0 10px;
+    padding:10px;
+    margin-top: 30px;
 }

@@ -1,47 +1,157 @@
-h1 {
-    font-family: "Source Sans Pro";
-    font-weight: bolder;
-    text-align: center;
+.finalReportWrapper{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
 }
-h3 {
-    font-family: "Source Sans Pro";
-    font-weight: bolder;
-    text-align: center;
-    color: grey;
-}
-.registerCertificate {
-    background-color: #BF161D;
-    border-radius: 5px;
-    border: none;
-    margin: 20px 0;
-    color: white;
-    font-family: "Source Sans Pro";
-    padding: 15px 0;
-    width: 30%;
-    height: 5%;
+.headerTitle{
+    width:100%;
     
-
+    color:black;
+    font-family: "Source Sans Pro";
+    padding-bottom: 20px;
+    margin: 40px 0;
 }
-
-.detailsActions {
-    margin-top: 20px;
-    display: flex;
-    flex-direction: row;
+.header h1{
+    text-align: center;
 }
-
-.detailsActions p {
-    margin-top: 7px;
-    margin-right: 5px;
+.headerp{
+    color: #979797;
 }
-
-.detailsActions1 {
-    display: flex;
+.display-linebreak {
+    white-space: pre-wrap;
+    white-space: -moz-pre-wrap;
+    white-space: -pre-wrap;
+    white-space: -o-pre-wrap;
+    word-wrap: break-word;
+    text-align: left;
+    width:70%;
+  }
+.procedure{
+    display:flex;
     flex-direction: row;
     justify-content: space-around;
+    margin-top: 80px;
+}
+.procedureInputs{
+    display:flex; 
+    flex-direction: column;
+    justify-content: center;
+    width:50%;
+
+}
+.procedureDescription{
+    display:flex;
+    flex-direction: column;
+    justify-content:flex-start;
+    font-family: "Source Sans Pro";
+    width:50%;
+    padding:30px;
+}
+.procedureTitle{
+    color:black;
+    font-family: "Source Sans Pro";
+    margin: 20px 0;
+    margin-bottom: 40px;
+}
+.formInput{
+    border-color:#CE626D;
+    border-radius: 5px;
+    margin:0;
+    align-self: center;
+    width:100%;
+    margin: 5px 0;
+    border-width: 1.5px;
+    background-color: #FAFAFA;
+    font-family: "Source Sans Pro";
+    color:#979797;
+    padding:6px 2px;
+
+}
+.formInputBad{
+    border-color:#CE626D;
+    border-radius: 5px;
+    margin:0;
+    align-self: center;
+    width:100%;
+    margin: 5px 0;
+    border-width: 1.5px;
+    background-color: #ffafb7;
+    font-family: "Source Sans Pro";
+    color:#979797;
+    padding:6px 2px;
+}
+.formInput1{
+    border-color:#CE626D;
+    border-radius: 5px;
+    margin:0;
+    align-self: center;
+    width:100%;
+    margin: 5px 0;
+    border-width: 1.5px;
+    background-color: #FAFAFA;
+    font-family: "Source Sans Pro";
+    color:#979797;
+    padding:15px 2px;
+    height:auto;
+
 }
 
-input{
-    border: 1px solid #CE626D;
-    background-color: #f9f6f6;
-    border-radius: 4px;
+#datePicked{
+    padding:1px 2px;
+}
+.procedureForm{
+    width:50%;
+    display:flex;
+    flex-direction: row;
+    justify-content: center;
+}
+.formLabel{
+    width:100%;
+    color:black;
+    font-family: "Source Sans Pro";
+    text-align: left;
+    margin: 7px 0;
+    font-weight: bold;
+}
+.buttonProcedure{
+    background-color: #CE626D;
+    color:white;
+    font-family: "Source Sans Pro";
+    width:fit-content;
+    padding:10px 25px;
+    align-self: center;
+    border: none;
+    border-radius: 5px;
+    margin-top: 10px;;
+
+}
+.imgDoctors{
+    margin-top: 250px;
+    margin-bottom: 100px;
+    height:50%;
+}
+
+
+.answer {
+    display: flex;
+    flex-direction: row;
+}
+
+.radio1 {
+    margin-left: 50px;
+    color:black;
+    scale: 70%;
+
+}
+
+.radio1:checked {
+    margin-left: 50px;
+    accent-color: #BF161D;
+    scale: 70%;
+}
+
+.label {
+    font-family: "Source Sans Pro";
+    position: relative;
+    top: 7px;
 }

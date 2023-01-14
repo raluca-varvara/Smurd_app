@@ -22,77 +22,111 @@ import MapImage from '../common/images/map.png'
 import Footer from '../footer/footer';
 import map2 from '../common/images/map2.png'
 
+import TextField from '@mui/material/TextField';
+import Dialog from '@mui/material/Dialog';
+import DialogActions from '@mui/material/DialogActions';
+import DialogContent from '@mui/material/DialogContent';
+import DialogContentText from '@mui/material/DialogContentText';
+import DialogTitle from '@mui/material/DialogTitle';
+
 export default function Accident() {
     const [gender, setGender] = useState(["Man", "Woman"]);
+    const [diagn, setDiagn] = useState("");
+    const [open, setOpen] = React.useState(false);
      let navigate = useNavigate(); 
-  
+    const handleClose = () => {
+        setOpen(false);
+    };
     return(
         <div className="donationsWrapper">
             
-            <div className='centered_column'>
-                <h1>Accident happened</h1>
-                
-                <img src={map2} alt=""></img>
-                
-                <h3>Location</h3>
-                 <form>
+            <div className='wrapperAccident'>
+                <h1 className = "accidentH">Accident happened</h1>
 
-                     <label className = "formLabel">Accident type</label>
-                        <select name="category" id="accident" className = "formInput">
+                <div>
+                    <div className = "rowAccident">
+                        <div className = "columnAccident">
+                        <label className = "accidentLabel">
+                                Request ID:
+                                <input type="text" value ="123abc" />
+                            </label>
+                            <label className = "accidentLabel">
+                                Exact location:
+                                <input type="text" value ="Strada Fabricii" />
+                            </label>
+                            <label className = "accidentLabel">
+                                Symptoms:
+                                <input type="text" value ="Lesinat, fara rani vizibile" />
+                            </label>
+                            
+                            <label className = "accidentLabel">
+                            Emergency type:
+                                <input type="text"  value = "Urgent"/>
+                            </label>
+                            
+                                
+                            <label className = "accidentLabel">
+                                Traffic  level:
+                                <input type="text" value ="Liber"/>
+                            </label>
+                            
+                            <label className = "accidentLabel">
+                                Time passed:
+                                <input type="text" value ="2-3 minute"/>
+                            </label>
+                            
+                            <label className = "accidentLabel">
+                                Estimated time to the emergency:
+                                <input type="text" value = "6 minutes"/>
+                            </label>
+                        </div>
+                        <div className = "columnAccident">
+                            <img src={map2} alt="" className = "imageAcc"></img>                       
+                            <h3>Location</h3>
+                        </div>
+                    </div>
+                    <div  className = "rowAccident">
+                        <label >
+                        Enter your diagnosis:
+                        <select name="category" id="ambulance" className = "formInput"  onChange={(e) => setDiagn(e.target.value)}>
+                            <option value="diagnosis">Select diagnosis</option>
+                            <option value="choking">Choking</option>
                             <option value="Lesin">Lesin</option>
-                            <option value="Arsura">Arsura</option>
-                            <option value="Accidentrutier">Accident rutier</option>
+                            
                         </select>
-                       <label>
-                        Exact location:
-                         <input type="text" value ="Strada Fabricii" />
-                    </label>
-                    <label>
-                        Symptoms:
-                         <input type="text" value ="Lesinat, fara rani vizibile" />
-                    </label>
-                    
-                        <label>
-                       Emergency type:
-                         <input type="text"  value = "Urgent"/>
-                    </label>
-                     
+                        </label>
                         
-                        <label>
-                        Traffic  level:
-                         <input type="text" value ="Liber"/>
-                    </label>
-                    
-                        <label>
-                        Time passed:
-                         <input type="text" value ="in jur de 2-3 minute"/>
-                    </label>
-                    
-                      <label>
-                        Estimated time to the emergency:
-                         <input type="text" value = "6 minutes"/>
-                    </label>
-
-                        <label>
-                       More details:
-                         <input type="text" value="persoana s-a prabusit in parcare dintr-o data"/>
-                    </label>
-                    
-                    
-                       <button className="accept" >
-                            Arrived at the emergency location
-                    </button>
-                    <button className="accept" >
-                            Request an ambulance
+                        
+                        <button className="accept" onClick={() => navigate("/firststeps")}>
+                                Need help? 
+                            </button>
+                        <button className="decline" onClick={() => setOpen(true)}>
+                            Call ambulance
+                            </button>
+                    </div>
+                    <div className = "acceptedRow">
+                        <button className="arrived">
+                                Arrived at the emergency location
                         </button>
-                         <button className="decline" onClick={() => navigate("/firststeps")}>
-                           Need help?
-                        </button>
-                    </form>
-                
+                    </div>
+                    
+                    </div>
                 
 
             </div>
+                
+            <Dialog open={open} onClose={handleClose}>
+                        <DialogTitle>Subscribe</DialogTitle>
+                        <div>
+                            Are you sure you need and ambulance
+                        </div>
+                        <DialogActions>
+                            <button onClick={handleClose} className="cardButton">Yes</button>
+                            <button onClick={handleClose} className="cardButton">No</button>
+                        </DialogActions>
+                    </Dialog>
+
+            
             <Footer />
 
 

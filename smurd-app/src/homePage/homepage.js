@@ -24,13 +24,16 @@ function HomePage() {
     const [tutorialImage, setTutorialImage] = useState(course)
     const [tutorialNavigate, setTutorialNavigate] = useState("/firstaidlessons")
     const [button, setButton] = useState("/verification")
+    const [button1, setButton1] = useState("/accident")
 
     var role = localStorage.getItem("role");
 
     useEffect (()=> {
         var verifyButtonHide = document.getElementById("verify");
+        var accidentHappBut = document.getElementById("accidentHappened");
         if (localStorage.getItem("role") === "admin") {
             verifyButtonHide.style.display = "block"
+            accidentHappBut.style.display = "none"
             setText("Check volunteer applications")
             setTutorialtext("Add tutorial")
             setTutorialImage(addTutorial)
@@ -39,12 +42,14 @@ function HomePage() {
         } else if (localStorage.getItem("role") === "volunteer"){
             setText("Final report")
             verifyButtonHide.style.display = "block"
+            accidentHappBut.style.display = "block"
             setTutorialtext("Apply for course")
             setTutorialImage(course)
             setTutorialNavigate("/firstaidlessons")
             setButton("/finalreport")
         } else {
             verifyButtonHide.style.display = "none"
+            accidentHappBut.style.display = "none"
             setTutorialtext("Apply for course")
             setTutorialImage(course)
             setTutorialNavigate("/firstaidlessons")
@@ -151,10 +156,14 @@ function HomePage() {
                         </div>
                     </button>
                 </div>
-
-                <button id="verify" className="verify" onClick={() => navigate(button)}>{text}</button>
+                <div className = "centerColumn">
+                    <button id="verify" className="verify" onClick={() => navigate(button)}>{text}</button>
+                    <button id = "accidentHappened" onClick={navigate(button1)}> Accident Happened</button>
+                </div>
+                
+                
             </div>
-    <Donations/>
+        <Donations/>
           <Footer/>
                
        

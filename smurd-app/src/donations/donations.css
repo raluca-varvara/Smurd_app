@@ -89,6 +89,19 @@ h2{
     border:none;
     
 }
+.donationBillActive{
+    color:white;
+    margin:15px 0;
+    /* padding:12px 50px; */
+    width:140px;
+    height:45px;
+    border-radius: 20px;
+    font-family: "Source Sans Pro";
+    font-weight: bold;
+    font-size: large;
+    border:none;
+    background-color: #ca4956;
+}
 .donationBillRow{
     display:flex;
     flex-direction: row;

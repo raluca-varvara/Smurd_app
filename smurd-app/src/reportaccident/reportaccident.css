@@ -11,17 +11,16 @@ h3 {
     color: grey;
 }
 
-.reportAccident {
+.reportAccidentButton {
+    
     background-color: #BF161D;
     border-radius: 5px;
     border: none;
     margin: 20px 0;
     color: white;
     font-family: "Source Sans Pro";
-    padding: 15px 0;
-    width: 30%;
-    height: 5%;
-
+    padding: 10px;
+    margin-top: 35px;;
 
 }
 
@@ -46,4 +45,55 @@ input {
     border: 1px solid #CE626D;
     background-color: #f9f6f6;
     border-radius: 4px;
+}
+.locationText{
+    color:black;
+    font-family: "Source Sans Pro";
+    font-weight: bold;
+    margin-left: 15px;;
+
+}
+.locationBut{
+    background-color: #BF161D;
+    border-radius: 5px;
+    border: none;
+    margin: 20px 0;
+    color: white;
+    font-family: "Source Sans Pro";
+    padding:  5px;
+
+    height: 5%;
+}
+.reportAccColumn{
+    display:flex;
+    flex-direction: column;
+    align-items: left;
+    width:30%;
+
+}
+.reportAccRow{
+    display:flex;
+    flex-direction: row;
+    justify-content: center;
+    width: 100%;
+}
+.reportAccLabel{
+    width:100%;
+    margin:10px;
+    align-items: left;
+    align-content: left;
+    height:60px;
+}
+.reportAccLabel1{
+    width:100%;
+    margin:10px;
+    align-items: left;
+    align-content: left;
+    height:160px;
+}
+.reportAccInput{
+    height:100px;
+}
+.reportBad{
+    background-color: #ffcdd2;
 }

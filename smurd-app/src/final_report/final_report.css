@@ -66,6 +66,20 @@
     padding:6px 2px;
 
 }
+.formInputBad{
+    border-color:#CE626D;
+    border-radius: 5px;
+    margin:0;
+    align-self: center;
+    width:100%;
+    margin: 5px 0;
+    border-width: 1.5px;
+    background-color: #ffc1c7;
+    font-family: "Source Sans Pro";
+    color:#979797;
+    padding:6px 2px;
+
+}
 
 
 #datePicked{
