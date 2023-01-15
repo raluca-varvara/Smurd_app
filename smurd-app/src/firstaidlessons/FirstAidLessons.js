@@ -14,12 +14,12 @@ import iconC from "../common/images/red-cross.png"
 import iconD from "../common/images/respiratoriu.jpg"
 
 
-let courses=[{source_img:iconK ,title:"Tehnici de oprire a sangerarii",ranking:'5.0',date:"8.03.2023",time:"",city:"Cluj Napoca",hospital:""},
-{source_img:iconA,title:"Tehnici de oprire a sangerarii 2",ranking:'4.8',date:"27.02.2023",time:"",city:"Bucuresti",hospital:""},
-{source_img:iconB,title:"How to do heimnlich" ,ranking:'5.0',date:"27.02.2023",time:"",city:"Cluj Napoca",hospital:""},
-{source_img:iconC,title:"Tehnici de oprire a sangerarii 4" ,ranking:'5.0',date:"27.02.2023",time:"",city:"Timisoara",hospital:""},
+let courses=[{source_img:iconK ,title:"Tehnici de oprire a sangerarii",ranking:'5.0',date:"2023-03-08",time:"",city:"Cluj Napoca",hospital:"",telefon:"077448988900"},
+{source_img:iconA,title:"Tehnici de oprire a sangerarii 2",ranking:'4.8',date:"2023-02-2",time:"",city:"Bucuresti",hospital:"",telefon:"077448988900"},
+{source_img:iconB,title:"How to do heimnlich" ,ranking:'5.0',date:"2023-02-27",time:"",city:"Cluj Napoca",hospital:"",telefon:"077448988900"},
+{source_img:iconC,title:"Tehnici de oprire a sangerarii 4" ,ranking:'5.0',date:"2023-02-27",time:"",city:"Timisoara",hospital:"",telefon:"077448988900"},
 {source_img:"https://media.gettyimages.com/id/922952142/photo/romania-women-day-package.jpg?s=2048x2048&w=gi&k=20&c=LRjNdQe5-TJlxSvBUBw6FEP33wrUaHmLhakj9_o_Lf8=",
-  title:"Tehnici de oprire a sangerarii 5" ,ranking:'5.0',date:"27.02.2023",time:"",city:"Bucuresti",hospital:""}
+  title:"Tehnici de oprire a sangerarii 5" ,ranking:'5.0',date:"2023-01-19",time:"",city:"Bucuresti",hospital:"",telefon:"077448988900"}
 ];
 
 
@@ -85,19 +85,19 @@ if(toBeDeleted!="")
 
   }
 
-  if(f.type="hospital" && c.city==f.value && added==false)
+  if(f.type="hospital" && c.hospital==f.value && added==false)
   {
     added=true
     new_list_courses.push(c)
 
   }
-  if(f.type="date" && c.city==f.value && added==false)
+  if(f.type="date" && c.date==f.value && added==false)
   {
     added=true
     new_list_courses.push(c)
 
   }
-  if(f.type="date" && c.city==f.value && added==false)
+  if(f.type="word" && c.title.includes(f.value,0) && added==false)
   {
     added=true
     new_list_courses.push(c)
@@ -268,7 +268,7 @@ function handleSearch()
   {
    currentCourses.map((img_src) => <LessonImage source_img={img_src.source_img} title={img_src.title}
                                    ranking={img_src.ranking} date={img_src.date}  time={img_src.time}    
-                                  city={img_src.city}   hospital={img_src.source_img}/>)}
+                                  city={img_src.city}   hospital={img_src.source_img} telefon={img_src.telefon}        />)}
     </div>
     </div>
     </div>

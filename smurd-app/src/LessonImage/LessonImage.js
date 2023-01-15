@@ -10,7 +10,7 @@ import { Navigate } from 'react-router-dom';
 
 
 
-function LessonImage(props={source_img:"",title:"Lesson",date:"28.12.2022",time:"21:07",ranking:"5.0" ,city:"Cluj Napoca",hospital:"Central",linkToLesson:"2"})
+function LessonImage(props={source_img:"",title:"Lesson",date:"28.12.2022",time:"21:07",ranking:"5.0" ,city:"Cluj Napoca",hospital:"Central",telefon:"00000",linkToLesson:"2"})
 {
 
 function doClick()
@@ -44,6 +44,10 @@ function doClick()
 <p id="lesson_title">{props.title}</p>
 <p id="date">{props.date}</p>
 <p id="time">{props.time}</p>
+<p id="contact">
+<i class="fa fa-phone"></i>
+&nbsp;&nbsp;
+{props.telefon}</p>
 </a>
   </div>);
 }
