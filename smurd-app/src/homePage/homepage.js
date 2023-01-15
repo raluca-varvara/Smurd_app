@@ -160,7 +160,7 @@ function HomePage() {
                 </div>
                 <div className = "centerColumn">
                     <button id="verify" className="verify" onClick={() => navigate(button)}>{text}</button>
-                    <button id = "accidentHappened" onClick={navigate(button1)}> Accident Happened</button>
+                    <button id = "accidentHappened" className="verify" onClick={() => navigate(button1)}> Accident Happened</button>  
                 </div>
                 
                 
