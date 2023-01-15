@@ -20,6 +20,8 @@ import { useNavigate } from "react-router-dom";
 function HomePage() {
  let navigate = useNavigate();
     const [text, setText] = useState("Check volunteer applications")
+
+    
     const [tutorialText, setTutorialtext] = useState("Apply for course")
     const [tutorialImage, setTutorialImage] = useState(course)
     const [tutorialNavigate, setTutorialNavigate] = useState("/firstaidlessons")

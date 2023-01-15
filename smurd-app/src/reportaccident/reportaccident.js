@@ -30,7 +30,7 @@ import DialogContentText from '@mui/material/DialogContentText';
 import DialogTitle from '@mui/material/DialogTitle';
 
 export default function ReportAccident() {
-        
+        let navigate = useNavigate();
     const [location, setLocation] = useState(false);
     const [open, setOpen] = React.useState(true);
     const [symptoms, setSymptoms] = useState("");
@@ -76,6 +76,7 @@ export default function ReportAccident() {
 
         else{
             alert("Application succseful")
+            navigate("/")
         }
 
         return true

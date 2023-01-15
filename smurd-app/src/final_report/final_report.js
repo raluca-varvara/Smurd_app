@@ -11,7 +11,9 @@ import Footer from '../footer/footer';
 const textProc = 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec in est et elit dignissim fermentum ut vitae diam. Donec in sagittis orci. Ut pretium odio eget consectetur eleifend. Aliquam in neque sed diam euismod lobortis eget eu tortor. Ut vel condimentum nunc, ut posuere sem. Vestibulum at lacus turpis. Mauris hendrerit tristique ante nec laoreet.\n\n Vivamus ac lacinia ligula. Sed consectetur justo urna. Aenean tristique, erat quis pellentesque ornare, turpis arcu semper ligula, sit amet faucibus lacus arcu nec nulla. In lorem ex, tincidunt vitae luctus quis, luctus eget dui. Pellentesque eu dui sagittis, vulputate augue id, gravida dolor. Nam condimentum iaculis imperdiet. Etiam faucibus ligula dapibus, mollis nulla nec, aliquet lectus. Maecenas gravida sodales ornare. Maecenas eu sapien a nisi gravida ornare ut non nisi. Suspendisse arcu purus, accumsan eu elit sit amet, porta lacinia urna. Donec bibendum, purus sit amet gravida tristique, urna lacus gravida arcu, sit amet fermentum mauris tortor ut nisl. Suspendisse eleifend felis odio, ac efficitur massa varius quis. Sed aliquam leo nec elementum maximus. Donec vitae aliquam orci. Sed egestas leo in magna congue, a scelerisque erat tempor. Ut egestas libero sed porttitor placerat.'
 const requestNumbers = ["123abc", "1234abcd"]
 
-function FinalReport(){
+
+function FinalReport() {
+    let navigate = useNavigate();
     const [reqNb, setReqnb] = useState("")
     const [addr, setAddr] = useState("")
     const [accidentType, setAccidentType] = useState("")
@@ -132,7 +134,7 @@ function FinalReport(){
                             id = "methodsApplied"
                             onChange={(e) => setMethods(e.target.value)}
                         />
-                        <button className = "buttonProcedure">Submit</button>
+                        <button className = "buttonProcedure" onClick={() => navigate("/")}>Submit</button>
                     </form>
                 </div>
                 <div className = "procedureDescription">

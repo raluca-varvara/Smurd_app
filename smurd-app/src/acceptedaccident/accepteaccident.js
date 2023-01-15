@@ -29,7 +29,7 @@ import DialogContent from '@mui/material/DialogContent';
 import DialogContentText from '@mui/material/DialogContentText';
 import DialogTitle from '@mui/material/DialogTitle';
 
-export default function Accident() {
+export default function Accident (props) {
     const [gender, setGender] = useState(["Man", "Woman"]);
     const [diagn, setDiagn] = useState("");
     const [open, setOpen] = React.useState(false);
@@ -91,13 +91,13 @@ export default function Accident() {
                         <select name="category" id="ambulance" className = "formInput"  onChange={(e) => setDiagn(e.target.value)}>
                             <option value="diagnosis">Select diagnosis</option>
                             <option value="choking">Choking</option>
-                            <option value="Lesin">Lesin</option>
+                            <option value="fainting">Fainting</option>
                             
                         </select>
                         </label>
                         
                         
-                        <button className="accept" onClick={() => navigate("/firststeps")}>
+                        <button className="accept" onClick={() => navigate("/firststeps",{state:{diagn}})}>
                                 Need help? 
                             </button>
                         <button className="decline" onClick={() => setOpen(true)}>

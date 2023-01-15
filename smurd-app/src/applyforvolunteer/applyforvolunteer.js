@@ -137,7 +137,7 @@ export default function Applyforvolunteer() {
                     <input type = "text" className = "formInput"  placeholder='Certificate Id Number' onChange={(e) => setId(e.target.value)}></input>
                     <label className = "formLabel">Upload ID photo</label>
                     <input type="file"  className = "formInput1" accept="image/png, image/gif, image/jpeg" />
-                    <button className = "buttonProcedure" >Submit</button>
+                    <button className = "buttonProcedure" onClick={() => navigate("/")}>Submit </button>
                 </form>
             </div>
             <div className = "procedureDescription">

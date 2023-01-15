@@ -24,7 +24,9 @@ import DialogContentText from '@mui/material/DialogContentText';
 import DialogTitle from '@mui/material/DialogTitle';
 
 
-function Donations(){
+
+function Donations() {
+    let navigate = useNavigate();
     const [donation, setDonation] = useState(5);
     const [open, setOpen] = React.useState(false);
     const [cvv, setCvv] = useState("");
@@ -37,6 +39,7 @@ function Donations(){
 
     const handleClose = () => {
         setOpen(false);
+       navigate("/")
     };
     const handlePay = () => {
         if(cvv=="" || cardNb == "" || name ==""){
@@ -45,7 +48,9 @@ function Donations(){
         else{
             alert("Succseful donation");
             setOpen(false);
+            navigate("/")
         }
+         
         
     };
 
