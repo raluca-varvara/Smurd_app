@@ -9,7 +9,7 @@ import { FormGroup, Input, Label} from 'reactstrap';
 
 function MockUpApplicationVerification (props) {
  
-
+  
 
 
   const location = useLocation();
@@ -22,11 +22,28 @@ function MockUpApplicationVerification (props) {
   
   
   
-  }
-  
-props=location.state  
-const[aState,setAState]=useState(props)
 
+  }
+
+  function  handleCancel()
+  {
+
+
+   alert("canceled");
+  
+  
+  
+  
+  }
+
+props=location.state  
+console.log("location",location.state)
+
+
+
+
+const[aState,setAState]=useState(props)
+console.log("state",aState)
 
   console.log("props",props)
   if(props.gender=="Male"){
@@ -222,7 +239,7 @@ const[aState,setAState]=useState(props)
 <Button style={{background:"#CE626D"}} className="button" id="submit" onClick={handleSubmit}>Accept</Button>
 
 
-<Button style={{background:"#CE626D"}} className="button" id="resubmit" onClick={handleSubmit}>Decline</Button>
+<Button style={{background:"#CE626D"}} className="button" id="resubmit" onClick={handleCancel}>Decline</Button>
 
 </div>
 

@@ -1,6 +1,15 @@
-import React, { useState } from 'react';
-import { Navigate } from 'react-router-dom';
+import React, { useState} from 'react';
+import { Navigate,useNavigate } from 'react-router-dom';
+import img1 from '../common/images/ids/img2.jpg'
+import img2 from '../common/images/ids/img7.jpg'
+import  img3 from '../common/images/ids/img9.jpg'
+import img4 from '../common/images/ids/img8.jpg'
+
+
+import certificate from '../common/images/ids/cert.jpg'
+
 import PropTypes from 'prop-types';
+
 import './VolunteerAplications.css';
 import {Button, Container, Jumbotron} from 'reactstrap';
 import {
@@ -11,7 +20,8 @@ import {
   Navbar,
   NavbarBrand,
   NavLink,
-  UncontrolledDropdown
+  UncontrolledDropdown,
+  Dropdown
 } from 'reactstrap';
 import { reduceHooks } from 'react-table';
 
@@ -22,8 +32,8 @@ let applications=[{
   country:"USA",
   city:"Atlanta,Georgia",
   CID:"1",
-  identityCard:"http://localhost:8080/img3.jpg",
-  FAidCert:"http://localhost:8080/Validate first aid certificate.jpg",
+  identityCard:img1,
+  FAidCert: certificate,
   link:"https://www.cartoonnetwork.ro/"
 
 },
@@ -34,8 +44,8 @@ let applications=[{
   country:"USA",
   city:"Burbank,California",
   CID:"3",
-  identityCard:"http://localhost:8080/img2.jpg",
-  FAidCert:"http://localhost:8080/Validate first aid certificate.jpg",
+  identityCard:img3,
+  FAidCert: certificate,
   link:"https://disneynow.com/all-shows/disney-channel"
 },
 {
@@ -45,8 +55,8 @@ let applications=[{
   country:"Hungary",
   city:"Budapest",
   CID:"2",
-  identityCard:"http://localhost:8080/img7.jpg",
-  FAidCert:"http://localhost:8080/Validate first aid certificate.jpg",
+  identityCard:img2,
+  FAidCert: certificate,
   link:"https://www.minimaxro.tv/"
 },
 {
@@ -56,8 +66,8 @@ let applications=[{
   country:"USA",
   city:"MenloPark,California",
   CID:"4",
-  identityCard:"http://localhost:8080/img4.jpg",
-  FAidCert:"http://localhost:8080/Validate first aid certificate.jpg",
+  identityCard:img4,
+  FAidCert: certificate,
   link:"https://www.facebook.com/"
 },
 ]
@@ -70,45 +80,61 @@ function VolunteerAplications() {
 
 
  const[currentAplications,setCurrentAplications]=useState(applications)
-
+ const[toggleClicked,setToggleClicked]=useState(false)
+         
  
-   const[red,setRed]=useState("")
+   const navigate = useNavigate();
+
 
 
 
 
   return (<div className="VolunteerAplications" data-testid="VolunteerAplications">
 
-    <UncontrolledDropdown>
-                    <DropdownToggle style={{ background:"maroon",color:"white",width:"300px" ,textAlign:'center'} } nav caret>
+    <Dropdown  toggle= {()=>
+                    
+                    { if(toggleClicked==false)
+                     {
+                       var elm= document.getElementById("menuD")
+                          elm.style.display="block"
+                        
+                 
+                        setToggleClicked(true)
+                     }else
+                     {
+                 
+                       var elm= document.getElementById("menuD")
+                       elm.style.display="none"
+                       setToggleClicked(false)
+                 
+                     }
+                   }
+                   
+                   
+                   } >
+                    <DropdownToggle style={{ background:"maroon",color:"white",width:"500px", height:"50px" ,textAlign:'center'} }  
+                     >
                        Check Volunteer Aplications
                     </DropdownToggle>
-                    <DropdownMenu style={{ background:"maroon",color:"white"}}>
+                    <DropdownMenu style={{ background:"maroon",color:"black",display:"none"}}    id="menuD"  >
 
                   { currentAplications.map( app =>
-
-                          <DropdownItem>
-                           <a style={{color:"white"}}  onClick={()=>{ setRed(<Navigate
-                           to={{
-                         pathname: '/verification',
-                         state:app}} />)
-                        }
-                         }>
-
+                              <> 
+                          <DropdownItem  style={{color:"white" ,background:"maroon"  }}    
+                          onClick={()=>{ 
+                            navigate('/verification', {state:app})
+                            }}>
                            {app.name}
-                           {red}
-                              </a>
-
-
                               
                            </DropdownItem>
-
+                           <br></br>
+                           </> 
 
                   )}
-                    
+                
 
                     </DropdownMenu>
-                </UncontrolledDropdown>
+                </Dropdown>
 
   </div>)
 }

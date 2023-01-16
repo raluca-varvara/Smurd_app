@@ -13,6 +13,8 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faClockFour, faClipboard, faHeartPulse } from '@fortawesome/free-solid-svg-icons'
 import Footer from '../footer/footer';
 import Donations from '../donations/donations';
+
+import  VolunteerAplications from '../VolunteerAplications/VolunteerAplications'
 import { useNavigate } from "react-router-dom";
 
 
@@ -25,7 +27,6 @@ function HomePage() {
     const [tutorialText, setTutorialtext] = useState("Apply for course")
     const [tutorialImage, setTutorialImage] = useState(course)
     const [tutorialNavigate, setTutorialNavigate] = useState("/firstaidlessons")
-    const [button, setButton] = useState("/verification")
     const [button1, setButton1] = useState("/accident")
 
     var role = localStorage.getItem("role");
@@ -40,7 +41,7 @@ function HomePage() {
             setTutorialtext("Add tutorial")
             setTutorialImage(addTutorial)
             setTutorialNavigate("/tutorials")
-            setButton("/verification")
+         
         } else if (localStorage.getItem("role") === "volunteer"){
             setText("Final report")
             verifyButtonHide.style.display = "block"
@@ -156,15 +157,19 @@ function HomePage() {
                         <div className = "center_row">
                             <p>Privacy and security</p>
                         </div>
+                       
                     </button>
                 </div>
-                <div className = "centerColumn">
-                    <button id="verify" className="verify" onClick={() => navigate(button)}>{text}</button>
+                  <div className = "centerColumn">
+                    <div id="verify">
+                      <VolunteerAplications/>
+                   </div>
+
                     <button id = "accidentHappened" className="verify" onClick={() => navigate(button1)}> Accident Happened</button>  
                 </div>
                 
-                
             </div>
+      
         <Donations/>
           <Footer/>
                
