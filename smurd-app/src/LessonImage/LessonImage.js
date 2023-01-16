@@ -25,7 +25,7 @@ function doClick()
   return(<div className="LessonImage" >
   
 
-<a onClick={doClick}>
+<a className='lessonImageThingy' onClick={doClick}>
 
 <div  id="header">
   <div id="rankings">

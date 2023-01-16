@@ -27,16 +27,19 @@ function HomePage() {
     const [tutorialText, setTutorialtext] = useState("Apply for course")
     const [tutorialImage, setTutorialImage] = useState(course)
     const [tutorialNavigate, setTutorialNavigate] = useState("/firstaidlessons")
+    const [button, setButton] = useState("/verification")
     const [button1, setButton1] = useState("/accident")
 
     var role = localStorage.getItem("role");
 
     useEffect (()=> {
         var verifyButtonHide = document.getElementById("verify");
+        var buttonVolunteer = document.getElementById("verify1")
         var accidentHappBut = document.getElementById("accidentHappened");
         if (localStorage.getItem("role") === "admin") {
             verifyButtonHide.style.display = "block"
             accidentHappBut.style.display = "none"
+            buttonVolunteer.style.display = "none"
             setText("Check volunteer applications")
             setTutorialtext("Add tutorial")
             setTutorialImage(addTutorial)
@@ -44,15 +47,18 @@ function HomePage() {
          
         } else if (localStorage.getItem("role") === "volunteer"){
             setText("Final report")
-            verifyButtonHide.style.display = "block"
+            buttonVolunteer.style.display = "block"
             accidentHappBut.style.display = "block"
+            verifyButtonHide.style.display = "none"
             setTutorialtext("Apply for course")
             setTutorialImage(course)
             setTutorialNavigate("/firstaidlessons")
             setButton("/finalreport")
         } else {
+            console.log("OH Hei")
             verifyButtonHide.style.display = "none"
             accidentHappBut.style.display = "none"
+            buttonVolunteer.style.display = "none"
             setTutorialtext("Apply for course")
             setTutorialImage(course)
             setTutorialNavigate("/firstaidlessons")
@@ -161,10 +167,10 @@ function HomePage() {
                     </button>
                 </div>
                   <div className = "centerColumn">
-                    <div id="verify">
+                    <div id="verify" >
                       <VolunteerAplications/>
                    </div>
-
+                   <button id="verify1" className="verify" onClick={() => navigate(button)}>{text}</button>
                     <button id = "accidentHappened" className="verify" onClick={() => navigate(button1)}> Accident Happened</button>  
                 </div>
                 

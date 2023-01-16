@@ -21,7 +21,7 @@ function FinalReport() {
     const [pacient, setPacient] = useState("")
     const [methods, setMethods] = useState("")
 
-    const submitFunct = event =>{
+    function submitFunct(event){
         if(reqNb == ""){
             alert("Complete the request number")
             event.preventDefault()
@@ -85,7 +85,11 @@ function FinalReport() {
             
             return false
         }
-        return true
+        else{
+            navigate("/")
+            return true
+        }
+        
     };
 
     return(
@@ -134,7 +138,7 @@ function FinalReport() {
                             id = "methodsApplied"
                             onChange={(e) => setMethods(e.target.value)}
                         />
-                        <button className = "buttonProcedure" onClick={() => navigate("/")}>Submit</button>
+                        <button className = "buttonProcedure" type = "submit">Submit</button>
                     </form>
                 </div>
                 <div className = "procedureDescription">

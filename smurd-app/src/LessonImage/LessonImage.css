@@ -1,12 +1,18 @@
 .LessonImage  {
 
-width:200px;
-height:200px;
+/* width:200px;
+height:200px; */
 margin-top:10px;
 margin-bottom:120px;
 margin-left:20px;
 text-align: center;
 display:block;
+border:#b8b8b8;
+border-style: solid;
+border-radius: 10px;
+border-width: 1px;
+padding:10px;
+
 }
 #header
 {
@@ -21,4 +27,19 @@ display:block;
     color:white;
     width:fit-content;
     height:25px;
+    border-radius: 3px;;
+    padding: 2px;
+}
+#lesson_title{
+    font-size:large;
+    margin-bottom: 3px;;
+}
+#date{
+    color:#979797;
+}
+#time{
+    color:#979797;
+}
+#contact{
+    color:#979797;
 }

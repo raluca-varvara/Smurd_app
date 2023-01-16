@@ -190,9 +190,9 @@ function handleSearch()
 
 
   return(<div className="FirstAidLessons">
-    <h1>First Aid Lessons</h1>
+    <h1 className = "firstAidLessonTitle">First Aid Lessons</h1>
 
-    <hr></hr>
+    <hr className = "hrFAL"></hr>
    <div id="main_fa">
 
     <div id="left_fa">
@@ -203,7 +203,7 @@ function handleSearch()
 
             required />
 
-          <Button className="button" style={{ background: "#CE626D" }} onClick={handleSearch}>
+          <Button className="buttonFilters" style={{ background: "#CE626D" }} onClick={handleSearch}>
             <FontAwesomeIcon icon={faMagnifyingGlass} />
 
 
@@ -259,7 +259,7 @@ function handleSearch()
 
 
 
-      </FormGroup><Button style={{ background: "#CE626D" }} className="button" id="submit" onClick={handleSubmit}>Show courses</Button>
+      </FormGroup><Button style={{ background: "#CE626D" }} className="buttonFilters1" id="submit" onClick={handleSubmit}>Show courses</Button>
 
   </div>
   <div id="right_fa">

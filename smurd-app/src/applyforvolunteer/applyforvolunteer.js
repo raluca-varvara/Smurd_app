@@ -89,6 +89,7 @@ export default function Applyforvolunteer() {
             }
             else{
                 alert("Application succseful")
+                navigate("/")
             }
 
             return true
@@ -104,7 +105,7 @@ export default function Applyforvolunteer() {
             <div className = "procedureForm">
 
             
-                <form className = "procedureInputs" onSubmit={submitFunct}>
+                <form className = "procedureInputs" >    {/*   onSubmit={submitFunct}*/}
                     <label className = "formLabel">First Name</label>
                     <input id = "firstname" type = "text" className = 'formInput' placeholder='First Name' onChange={(e) => setName(e.target.value)}></input>
                     <label className = "formLabel">Last Name</label>
@@ -137,7 +138,7 @@ export default function Applyforvolunteer() {
                     <input type = "text" className = "formInput"  placeholder='Certificate Id Number' onChange={(e) => setId(e.target.value)}></input>
                     <label className = "formLabel">Upload ID photo</label>
                     <input type="file"  className = "formInput1" accept="image/png, image/gif, image/jpeg" />
-                    <button className = "buttonProcedure" onClick={() => navigate("/")}>Submit </button>
+                    <button className = "buttonProcedure" onClick={() => submitFunct()}>Submit </button>
                 </form>
             </div>
             <div className = "procedureDescription">
